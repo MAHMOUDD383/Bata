@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> LAYLA </title>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet"> <!-- Correct link for Lalezar font -->
+    <style>
+        body {
+            font-family: 'Lalezar', sans-serif; /* Use the Lalezar font */
+            text-align: center;
+            padding: 20px;
+            background-image: url('n100.jpg'); /* Set the background image */
+            background-size: cover; /* Cover the entire body with the image */
+            background-position: center 20%; /* Center the image and move it down 20% */
+            color: white; /* Change text color to white for better contrast */
+        }
+        #messageBox {
+            border: 1px solid #830f0f;
+            padding: 10px;
+            margin-top: 20px;
+            display: none;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0); /* Slightly transparent background for better readability */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #000000;
+            color: rgb(100, 10, 10);
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>😉هابي مسدج بطريقه ديدو</h1>
+    <p>اتكي هنا يبيبي عشان تشوفي الويل</p>
+    <button id="startButton">حاضر يعمري</button>
+    <div id="messageBox">
+        <p id="messageText"></p>
+        <button id="nextButton">التالي</button>
+    </div>
+
+    <script>
+        const messages = [
+            "سمووو عليكووو",
+            "عامله اي يبيبي ؟",
+            "💋💋 بعشق امك يعمري ",
+            " 🫦عايز اشفطك",
+            "🥵 امتي يتقفل علينا باب بقي يقلبي ",
+            "💋مش هحلك يقلبي ",
+            "مش قولتلك هيجيلك هابي مسدج مجاش لحد ؟",
+            "🫦عايز بوسه حنك بقي يقلبي",
+            " 🥵 امتي بقي امتي",
+            "هنفضل علي كلمتنا يقلبي؟",
+            "MAHMOUD & LAYLA =💍",
+            "Wanna fu*k u so hard baby 😫",
+            "بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك بحبك",
+        ];
+
+        const nextButtonLabels = [
+            "يساتر",
+            "مش كويسه",
+            "💋💋 وانا كمان يقلبي ",
+            "عيب يراجل امك قاعده😂",    
+            "ليه هتعمل اي يقلبي ؟",
+            "مش قادره استني يقلبي",
+            " 💋 أنا شفايفي ولعت يقلبي ",
+            "حنك بس ؟",
+            "اصبر يقلبي مش بربيلك البضاعه",
+            "هنفضل يعمري",
+            "إن شاء الله يقلبي",
+            "اي دا يعنيا",
+            "",
+        ];
+
+        let currentMessageIndex = 0;
+
+        document.getElementById("startButton").onclick = () => {
+            currentMessageIndex = 0;
+            showMessage();
+        };
+
+        document.getElementById("nextButton").onclick = () => {
+            currentMessageIndex++;
+            showMessage();
+        };
+
+        function showMessage() {
+            if (currentMessageIndex < messages.length) {
+                document.getElementById("messageText").innerText = messages[currentMessageIndex];
+                document.getElementById("messageBox").style.display = "block";
+
+                const nextButton = document.getElementById("nextButton");
+                if (currentMessageIndex < nextButtonLabels.length) {
+                    nextButton.innerText = nextButtonLabels[currentMessageIndex];
+                } else {
+                    nextButton.innerText = "التالي";
+                }
+            } else {
+                alert(" مع السلامة يا حب");
+                document.getElementById("messageBox").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
